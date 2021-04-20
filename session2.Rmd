@@ -345,7 +345,7 @@ de_luminal <- DESeq(dds_luminal)
 
 In particular, DESeq2 allows [multi-factor models](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#multi-factor-designs) which can account for other sources of variation in the data such as batches or gender.
 
-Lets suppose that we wanted the different between virgin and lactating individuals, but controlling for `CellType`. The main assumption being that the effect of `Status` is the same regardless of `CellType` The design for such an analysis would be:-
+Lets suppose that we wanted to find genes differentially-expressed between virgin and lactating individuals, but controlling for `CellType`. The main assumption being that the effect of `Status` is the same regardless of `CellType` The design for such an analysis would be:-
 
 ```{r}
 dds_mf <- dds
