@@ -9,6 +9,13 @@ if (require(ggplot2,quietly = TRUE)) {
   message("The ggplot2 package has NOT been installed. Please try typing the command 'install.packages('ggplot2')' again")
 }
 
+if (require(readr,quietly = TRUE)) {
+  message("The readr package has been installed")
+} else {
+  message("The readr package has NOT been installed. Please try typing the command 'install.packages('readr')' again")
+}
+
+
 if (require(tximport,quietly = TRUE)) {
   message("The tximport package has been installed")
 } else {
