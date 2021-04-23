@@ -12,26 +12,26 @@ if (require(ggplot2,quietly = TRUE)) {
 if (require(tximport,quietly = TRUE)) {
   message("The tximport package has been installed")
 } else {
-  message("The tximport package has NOT been installed. Please try typing the command 'install.packages('tximport')' again")
+  message("The tximport package has NOT been installed. Please try typing the command 'BiocManager::install('tximport')' again")
 } 
 
 if (suppressPackageStartupMessages(require(DESeq2,quietly = TRUE))) {
   message("The DESeq2 package has been installed")
 } else {
-  message("The DESeq2 package has NOT been installed. Please try typing the command 'install.packages('DESeq2')' again")
+  message("The DESeq2 package has NOT been installed. Please try typing the command 'BiocManager::install('DESeq2')' again")
 } 
 
 if (suppressPackageStartupMessages(require(org.Mm.eg.db,quietly = TRUE))) {
   message("The org.Mm.eg.db package has been installed")
 } else {
-  message("The org.Mm.eg.db package has NOT been installed. Please try typing the command 'install.packages('org.Mm.eg.db')' again")
+  message("The org.Mm.eg.db package has NOT been installed. Please try typing the command 'BiocManager::install('org.Mm.eg.db')' again")
 } 
 
 
 if (suppressPackageStartupMessages(require(TxDb.Mmusculus.UCSC.mm10.knownGene,quietly = TRUE))) {
   message("The TxDb.Mmusculus.UCSC.mm10.knownGene package has been installed")
 } else {
-  message("The TxDb.Mmusculus.UCSC.mm10.knownGene package has NOT been installed. Please try typing the command 'install.packages('TxDb.Mmusculus.UCSC.mm10.knownGene')' again")
+  message("The TxDb.Mmusculus.UCSC.mm10.knownGene package has NOT been installed. Please try typing the command 'BiocManager::install('TxDb.Mmusculus.UCSC.mm10.knownGene')' again")
 } 
 
 if (suppressPackageStartupMessages(require(pheatmap,quietly = TRUE))) {
@@ -43,7 +43,7 @@ if (suppressPackageStartupMessages(require(pheatmap,quietly = TRUE))) {
 if (suppressPackageStartupMessages(require(goseq,quietly = TRUE))) {
   message("The goseq package has been installed")
 } else {
-  message("The goseq package has NOT been installed. Please try typing the command 'install.packages('goseq')' again")
+  message("The goseq package has NOT been installed. Please try typing the command 'BiocManager::install('goseq')' again")
 } 
 
 
@@ -57,11 +57,11 @@ if (suppressPackageStartupMessages(require(rmarkdown,quietly = TRUE))) {
 if (suppressPackageStartupMessages(require(clusterProfiler,quietly = TRUE))) {
   message("The clusterProfiler package has been installed")
 } else {
-  message("The clusterProfiler package has NOT been installed. Please try typing the command 'install.packages('clusterProfiler')' again")
+  message("The clusterProfiler package has NOT been installed. Please try typing the command 'BiocManager::install('clusterProfiler')' again")
 } 
 
 if (suppressPackageStartupMessages(require(biomaRt,quietly = TRUE))) {
   message("The biomaRt package has been installed")
 } else {
-  message("The biomaRt package has NOT been installed. Please try typing the command 'install.packages('biomaRt')' again")
+  message("The biomaRt package has NOT been installed. Please try typing the command 'BiocManager::install('biomaRt')' again")
 } 
