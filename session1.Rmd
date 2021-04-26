@@ -17,8 +17,37 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Workshop Overview
 
-# Learning objectives
+High-throughput sequencing is now established as a standard technique for many functional genomics studies; allowing the researcher to compare and contrast the transcriptomes of many individuals to obtain biological insight. A high-volume of data are generated from these experimental techniques and thus require robust and reproducible tools to be employed in the analysis.
+
+In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include reading the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the well-respected DESEq2 analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. 
+
+Although we will use RNA-seq data as a case study, the format of the data and methodologies will be highly applicable to other types of high-throughput omics data.
+
+## Learning outcomes
+
+After this workshop the successful learner will have a practical understanding of:
+
+- Exploring RNA-seq count data and importing these data into R
+- Normalisation strategies for RNA-seq counts
+- Quality Assessment of counts
+- Identifying outliers, batch effects and sample mix-ups
+- Using the DESeq2 package to assess differential expression
+- Construction and interpretation of common visualisations
+- Using annotation packages to query biological databases
+- Methodology behind gene set testing and enrichment analysis
+
+## Teaching Style
+
+- Pre-written *markdown* and compiled HTML files
+  + links from the google doc
+- Live sessions going through the markdown
+  + including "breakout sessions" for exercise and questions
+- Recordings made available
+  + links from the google doc
+
+# Learning objectives - Session 1
 
 - Exploring count data and importing these data into R
 - Normalisation strategies for RNA-seq counts
@@ -30,7 +59,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Measuring gene expression on a genome-wide scale has become common practice over the last two decades or so, with microarrays predominantly used pre-2008. With the advent of next generation sequencing technology in 2008, an increasing number of scientists use this technology to measure and understand changes in gene expression in often complex systems. As sequencing costs have decreased, using RNA-Seq to simultaneously measure the expression of tens of thousands of genes for multiple samples has never been easier. The cost of these experiments has now moved from generating the data to storing and analysing it.
 
-There are many steps involved in analysing an RNA-Seq experiment. Analysing an RNAseq experiment begins with sequencing reads. Traditionally, these are aligned to a reference genome, then the number of reads mapped to each gene can be counted. More modern approaches such as `salmon` quantify transcripts directly and do not require genome alignment to have taken place. Either approach results in a table of counts, which is what we perform statistical analyses on in R. While mapping and counting are important and necessary tasks, they are typically performed in languages other than R and so outside the scope of this course.
+There are many steps involved in analysing an RNA-Seq experiment. 
+
+![](https://databeauty.com/figures/2016-09-13-RNA-seq-analysis/rna_seq_workflow.png)
+
+Workflow image from Ting-you Wang's [RNA-seq data analysis page](https://databeauty.com/blog/tutorial/2016/09/13/RNA-seq-analysis.html)
+
+Analysing an RNAseq experiment begins with sequencing reads. Traditionally, these are aligned to a reference genome, then the number of reads mapped to each gene can be counted. More modern approaches such as `salmon` quantify transcripts directly and do not require genome alignment to have taken place. Either approach results in a table of counts, which is what we perform statistical analyses on in R. While mapping and counting are important and necessary tasks, they are typically performed in languages other than R and so outside the scope of this course.
 
 <div class="information">
 If you want to know more about genome alignment and command-line tools, feel free to check out our workshop on this topic in your own time
