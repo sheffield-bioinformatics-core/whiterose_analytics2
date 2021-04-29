@@ -27,10 +27,13 @@ library(dplyr)
     + heatmaps
 - Customisation of plots
 
-We can now have a list of genes ordered according to their evidence for being differentially-expressed. You should have saved a `results_cellType.rds` object in the previous session. If you don't have it you can download using [this link](Robjects/results_cellType.rds).
+We can now have a list of genes ordered according to their evidence for being differentially-expressed. You should have saved a `de_cellType.rds` object in the previous session. 
 
 ```{r}
-results_cellType <- readRDS("Robjects/results_cellType.rds")
+de_cellType <- readRDS("Robjects/de_cellType.rds")
+results_cellType <- results(de_cellType) %>% 
+  as.data.frame %>% 
+  tibble::rownames_to_column("ENSEMBL")
 ```
 
 We would love to share this list with our collaborators, or search for our favourite gene in the results. However, the results are not very useful in there current form as each row is named according to an *Ensembl* identifier. Whilst gene symbols are problematic and can change over time, they are the names that are most recognisable and make the results easier to navigate.
