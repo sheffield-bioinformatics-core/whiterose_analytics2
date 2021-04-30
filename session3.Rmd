@@ -30,6 +30,7 @@ library(dplyr)
 We can now have a list of genes ordered according to their evidence for being differentially-expressed. You should have saved a `de_cellType.rds` object in the previous session. 
 
 ```{r}
+library(DESeq2)
 de_cellType <- readRDS("Robjects/de_cellType.rds")
 results_cellType <- results(de_cellType) %>% 
   as.data.frame %>% 
