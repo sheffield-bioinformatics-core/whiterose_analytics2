@@ -30,6 +30,7 @@ library(dplyr)
 We can now have a list of genes ordered according to their evidence for being differentially-expressed. You should have saved a `de_cellType.rds` object in the previous session. 
 
 ```{r}
+library(DESeq2)
 de_cellType <- readRDS("Robjects/de_cellType.rds")
 results_cellType <- results(de_cellType) %>% 
   as.data.frame %>% 
@@ -121,7 +122,7 @@ filter(anno, ENSEMBL %in% dup_ids) %>%
 Fortunately, there are not too many so hopefully we won't lose too much information if we discard the entries that are duplicated. The first occurrence of the duplicated ID will still be included in the table.
 
 ```{r}
-anno <- AnnotationDbi::select(org.Mm.eg.db,keys=results_status$ENSEMBL,
+  anno <- AnnotationDbi::select(org.Mm.eg.db,keys=results_cellType$ENSEMBL,
               columns=c("ENSEMBL","SYMBOL","GENENAME","ENTREZID"),
               keytype="ENSEMBL") %>% 
   filter(!duplicated(ENSEMBL))
@@ -152,7 +153,7 @@ Now we have annotated our results, we can start to explore some common visualisa
 
 A useful sanity check is to examine the counts for a single gene across biological groups. A simple function for making this plot is `plotCounts`, which normalizes counts by sequencing depth and adds a "pseudocount" of 1/2 to allow for log scale plotting. The counts are grouped by the variables in  `intgroup`, where more than one variable can be specified. Here we specify the gene which had the smallest p-value from the results table created above. You can select the gene to plot by rowname or by numeric index:-
 
-As the results table no longer contains read counts, we will have to load these from a previous object. [Click here to download if you are missing this](Robjects/dds.rds).
+As the results table no longer contains read counts, we will have to load these from a previous object.
 
 ```{r}
 library(DESeq2)
@@ -271,7 +272,7 @@ pheatmap(assay(vsd)[top_genes,],
 
 
 - Repeat the same heatmap as above, but for the top 100 most differentially-expressed genes **between lactation and virgin**
-    + Load your `de_status.rds` file from last week. If you don't have one, [click here to download one](Robjects/results_status.rds)
+    + Load your `de_status.rds` file from last week. 
     + Re-arrange by adjusted p-value and join with the annotation table from `org.Mm.eg.db`
     + identify the top 100 genes by p-value and create the heatmap
 - Save the plot to a pdf file
