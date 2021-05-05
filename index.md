@@ -1,5 +1,5 @@
 ---
-title: "BMS353 Bioinformatics for Biomedical Science"
+title: "White Rose Mechanistic Biology - Analytics 2 (Analysis of RNA-seq data in R)"
 author: "Module Coordinator Mark Dunning"
 output: 
   html_document: 
@@ -87,8 +87,8 @@ source("https://raw.githubusercontent.com/sheffield-bioinformatics-core/whiteros
 
 ## 5) Watch these short introductory videos
 
-A gentle introduction to RNA-seq - 18 minutes
-RNA-seq count normalisation explained - 10 minutes
+[A gentle introduction to RNA-seq](https://youtu.be/tlf6wYJrwKY) - 18 minutes
+[RNA-seq count normalisation explained](https://youtu.be/TTUrtCY2k-w) - 10 minutes
 
 
 
